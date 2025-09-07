@@ -18,7 +18,7 @@ class SeatService {
   }
 
   addSeat(seatDto, token) {
-    return axios.post(`${API_URL}/add`, seatDto, {
+    return axios.post(`${API_URL}/seats/add`, seatDto, {
       headers: { Authorization: `Bearer ${token}` }
     });
   }

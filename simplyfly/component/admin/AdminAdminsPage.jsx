@@ -27,6 +27,7 @@ export default function AdminAdminsPage() {
 
   const deleteUser = async (id) => {
     if (!window.confirm("⚠️ Are you sure you want to delete this Admin?")) return;
+    
 
     try {
       const token = localStorage.getItem("jwtToken");

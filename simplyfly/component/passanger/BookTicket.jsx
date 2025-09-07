@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FlightService from "../../Service/FlightService";
+import SeatService from "../../Service/SeatService";
 import planeLogo from '../assets/planeLogo.jpg';
 
 export default function BookTicket() {

@@ -10,7 +10,6 @@ import FlightSearchPage from '../component/passanger/FlightSearchPage'
 import BookingConfirmation from '../component/passanger/BookingConfirmation'
 import SeatSelectionPage from '../component/passanger/SeatSelectionPage'
 import PaymentPage from '../component/passanger/PaymentPage'
-import PrivateRoute from '../Service/PrivateRoute'
 import MyBookings from '../component/passanger/MyBookings'
 import Profile from '../component/passanger/Profile'
 import Logout from '../component/passanger/Logout'
@@ -58,7 +57,9 @@ function App() {
           <Route path="/route-list" element={<RouteList />} />
           <Route path="/add-route" element={<AddRoute />} />
           <Route path="/add-flight/:routeId" element={<AddFlight />} />
-
+         
+          <Route path="/passenger/search-flights" element={ <SearchFlight />} />
+          
           <Route path="/manage-flight" element={<OwnerFlightsPage />} />
           <Route path="/update-flight/:id" element={<UpdateFlightPage />} />
           <Route path="/myflight-booking" element={<GetBooking />} />
@@ -82,8 +83,7 @@ function App() {
 
           
          
-          <Route path="/passenger/search-flights" element={<PrivateRoute allowedRoles={["PASSENGER"]}> <SearchFlight />  </PrivateRoute>} />
-
+          
         </Routes>
 
 

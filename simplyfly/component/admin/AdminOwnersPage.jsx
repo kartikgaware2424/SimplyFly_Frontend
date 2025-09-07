@@ -19,7 +19,7 @@ export default function AdminOwnersPage() {
         //   { headers: { Authorization: `Bearer ${token}` } }
         // );
           const res = await UserService.getUsersByRole("OWNER", token);
-        setOwners(res.data);
+          setOwners(res.data);
       } catch (err) {
         console.error("Error fetching owners", err);
       }
@@ -28,7 +28,8 @@ export default function AdminOwnersPage() {
   }, []);
 
   const deleteUser = async (id) => {
-    if (!window.confirm("⚠️ Are you sure you want to delete this Owner?")) return;
+    if (!window.confirm("⚠️ Are you sure you want to delete this Owner?"))
+       return;
 
     try {
       const token = localStorage.getItem("jwtToken");

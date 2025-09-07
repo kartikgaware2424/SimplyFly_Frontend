@@ -95,7 +95,7 @@ export default function Refund() {
           </h2>
           <button
             className="btn btn-secondary"
-            onClick={() => navigate("/owner-dashboard")}
+            onClick={() => navigate("/admin-dashboard")}
           >
             🏠 Home
           </button>

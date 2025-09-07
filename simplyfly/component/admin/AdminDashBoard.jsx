@@ -7,21 +7,25 @@ export default function AdminDashBoard() {
       title: "Regsiter New Admin and Flight Owner",
       link: "/admin-register",
      desc: "You can register new admin and Flight Owner.",
+     img:"https://img.freepik.com/premium-vector/register-now-button-concept-windows-with-user-profile-button-account-log-computing-avatar-web_773844-838.jpg?semt=ais_hybrid&w=740&q=80"
     },
     {
       title: "Manage Accounts",
       link: "/manage-user",
       desc: "Manage User Account (FlightOwner & Passenger)",
+      img:"https://cdn.smartkarrot.com/wp-content/uploads/2020/06/Account-Management-Software.png"
     },
     {
       title: "Manage route",
       link: "/manage-route",
        desc: "View and manage all your  route in one place.",
+       img:"https://www.shutterstock.com/image-vector/gps-pin-mockup-hud-element-260nw-1590953383.jpghttps://www.shutterstock.com/image-vector/gps-pin-mockup-hud-element-260nw-1590953383.jpg"
     },
     {
       title: "Manage Refund",
       link: "/manage-adminrefund",
        desc: "View and manage all your  refund in one place.",
+       img:"https://www.dropoff.com/wp-content/uploads/2024/01/Returns-Management-The-Most-Detailed-Guide-For-Retail-and-E-Commerce-in-2024-01.png"
     }
     
   ];
@@ -105,7 +109,7 @@ export default function AdminDashBoard() {
     className="text-center py-4 mt-auto"
     style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
   >
-    <p className="mb-0 text-white-50">©2025 SimpliFly. Fly with confidence.</p>
+    <p className="mb-0 text-white-50">@SimpliFly. Fly with confidence.</p>
   </footer>
 </div>
     
