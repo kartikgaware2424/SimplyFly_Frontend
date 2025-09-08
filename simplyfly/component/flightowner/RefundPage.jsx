@@ -23,7 +23,7 @@ export default function RefundPage() {
         const payload = JSON.parse(atob(token.split(".")[1]));
         const email = payload.sub;
 
-        // Fetch userId by email
+       
         // const userRes = await axios.get(
         //   `http://localhost:8080/api/users/getUserByEmail/${email}`,
         //   { headers: { Authorization: `Bearer ${token}` } }
@@ -34,7 +34,7 @@ export default function RefundPage() {
 
         const ownerId = userRes.data.userId;
 
-        // Fetch refunds for owner’s flights
+       
         // const refundRes = await axios.get(
         //   `http://localhost:8080/api/refunds/getByOwner/${ownerId}`,
         //   { headers: { Authorization: `Bearer ${token}` } }
@@ -67,7 +67,7 @@ export default function RefundPage() {
 
       alert(`Refund ${action}d successfully`);
 
-      // Update status locally
+    
       setRefunds((prev) =>
         prev.map((r) =>
           r.refundId === refundId

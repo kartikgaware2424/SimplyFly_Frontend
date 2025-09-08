@@ -11,7 +11,7 @@ export default function GetBooking() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    // Fetch owner flights on load
+  
     useEffect(() => {
         const fetchFlights = async () => {
             try {
@@ -21,7 +21,7 @@ export default function GetBooking() {
                     return;
                 }
 
-                // Decode JWT to get email
+               
                 const payload = JSON.parse(atob(token.split(".")[1]));
                 const email = payload.sub;
 
@@ -55,7 +55,7 @@ export default function GetBooking() {
         fetchFlights();
     }, []);
 
-    // Delete Flight
+    
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this flight?")) return;
 

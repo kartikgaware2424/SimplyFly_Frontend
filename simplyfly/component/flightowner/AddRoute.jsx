@@ -40,7 +40,7 @@ export default function AddRoute() {
       setSuccess(true);
       setError("");
 
-      // Reset form
+    
       setRoute({
         origin: "",
         destination: "",
@@ -48,7 +48,7 @@ export default function AddRoute() {
         travelDuration: "",
       });
 
-      // Redirect to route list after 2s
+     
       setTimeout(() => {
         navigate("/route-list");
       }, 2000);

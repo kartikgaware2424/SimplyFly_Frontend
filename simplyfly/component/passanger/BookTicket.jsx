@@ -12,7 +12,7 @@ export default function BookTicket() {
         "Jaipur", "Lucknow", "Surat", "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal", "Visakhapatnam",
         "Pimpri-Chinchwad", "Patna", "Vadodara", "Ghaziabad", "Ludhiana", "Agra", "Nashik", "Faridabad",
         "Meerut", "Rajkot", "Kalyan-Dombivli", "Vasai-Virar", "Varanasi", "Srinagar", "Aurangabad",
-        "Dhanbad", "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi","Goa"
+        "Dhanbad", "Amritsar", "Navi Mumbai", "Allahabad", "Ranchi","Goa","shirdi"
     ];
 
     const [flightSearch, setFlightSearch] = useState({
@@ -62,13 +62,13 @@ export default function BookTicket() {
         return new Date(dt.replace(" ", "T")).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     };
 
-    // check if departure is in future or present
+  
     const isFutureOrToday = (depDate, depTime) => {
     if (!depTime) return false;
     const now = new Date();
     let dep;
 
-    // If depTime already contains "T", treat as full datetime
+    
     if (depTime.includes("T")) {
         dep = new Date(depTime);
     } else {

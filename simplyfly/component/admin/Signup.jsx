@@ -120,7 +120,7 @@ export default function Signup() {
                                     </div>
                                 )}
 
-                                {/* Name */}
+                               
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Full Name</label>
                                     <input
@@ -134,7 +134,7 @@ export default function Signup() {
                                     {errors.name && <small className="text-danger">{errors.name}</small>}
                                 </div>
 
-                                {/* Email */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Email</label>
                                     <input
@@ -148,7 +148,7 @@ export default function Signup() {
                                     {errors.email && <small className="text-danger">{errors.email}</small>}
                                 </div>
 
-                                {/* Password */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Password</label>
                                     <input
@@ -162,7 +162,7 @@ export default function Signup() {
                                     {errors.password && <small className="text-danger">{errors.password}</small>}
                                 </div>
 
-                                {/* Age */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Age</label>
                                     <input
@@ -176,7 +176,7 @@ export default function Signup() {
                                     {errors.age && <small className="text-danger">{errors.age}</small>}
                                 </div>
 
-                                {/* Role */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold mb-2">Sign up as</label>
                                     <div className="btn-group w-100" role="group">
@@ -211,7 +211,7 @@ export default function Signup() {
                                     {errors.role && <small className="text-danger">{errors.role}</small>}
                                 </div>
 
-                                {/* Contact */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Contact Number</label>
                                     <input
@@ -225,7 +225,7 @@ export default function Signup() {
                                     {errors.contactNumber && <small className="text-danger">{errors.contactNumber}</small>}
                                 </div>
 
-                                {/* Gender */}
+                                
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Gender</label>
                                     <select
@@ -242,7 +242,7 @@ export default function Signup() {
                                     {errors.gender && <small className="text-danger">{errors.gender}</small>}
                                 </div>
 
-                                {/* Address */}
+                              
                                 <div className="mb-3">
                                     <label className="form-label fw-semibold text-dark mb-1">Address</label>
                                     <textarea

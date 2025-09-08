@@ -16,11 +16,11 @@ export default function PaymentPage() {
     const [paymentMethod, setPaymentMethod] = useState("CARD");
     const [msg, setMsg] = useState("");
 
-    // Fetch passenger ID and seat IDs on mount
+    
     useEffect(() => {
         const token = localStorage.getItem("jwtToken");
 
-        // 1️⃣ Fetch passenger/user ID
+        
         const fetchPassengerId = async () => {
             try {
                 if (!token) return setMsg("❌ Token not found!");
@@ -41,7 +41,7 @@ export default function PaymentPage() {
             }
         };
 
-        // 2️⃣ Fetch seat IDs for all selected seats
+       
       const fetchSeatIds = async () => {
   try {
     if (!token) return;
@@ -56,10 +56,10 @@ export default function PaymentPage() {
     const res = await SeatService.getSeatByNumber(seatNumber, token);
 
       if (Array.isArray(res.data)) {
-        // If backend returns an array
+       
         res.data.forEach(seat => ids.push(seat.seat_id || seat.seatId));
       } else if (res.data) {
-        // If backend returns a single seat object
+       
         ids.push(res.data.seat_id || res.data.seatId);
       }
     }
@@ -91,7 +91,7 @@ export default function PaymentPage() {
         const token = localStorage.getItem("jwtToken");
 
         try {
-            // 1️⃣ Add Booking
+           
             const now = new Date();
             const localIsoString = now.getFullYear() + "-" +
                 String(now.getMonth() + 1).padStart(2, "0") + "-" +
@@ -106,7 +106,7 @@ export default function PaymentPage() {
                 status: "CONFIRMED",
                 passengerId: parseInt(passengerId),
                 flightId: parseInt(flightId),
-                bookedSeatIds: seatIds, // <-- array of seat IDs
+                bookedSeatIds: seatIds, 
                 paymentId: null,
                 refundId: null
             };
@@ -121,7 +121,7 @@ export default function PaymentPage() {
 
             const bookingId = bookingRes.data.bookingId;
 
-            // 2️⃣ Add Payment
+          
             const paymentDto = {
                 amount: totalAmount,
                 paymentDate: new Date(),

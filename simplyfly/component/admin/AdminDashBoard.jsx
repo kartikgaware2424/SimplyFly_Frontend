@@ -95,7 +95,7 @@ export default function AdminDashBoard() {
               style={{ height: "180px", objectFit: "cover" }}
             />
             <div className="card-body text-center">
-              
+               <h5 className="card-title">{card.title}</h5>
               <p className="card-text">{card.desc}</p>
             </div>
           </Link>

@@ -11,7 +11,7 @@ export default function OwnerFlightsPage() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // Fetch owner flights on load
+
   useEffect(() => {
     const fetchFlights = async () => {
       try {
@@ -21,7 +21,7 @@ export default function OwnerFlightsPage() {
           return;
         }
 
-        // Decode JWT to get email
+       
         const payload = JSON.parse(atob(token.split(".")[1]));
         const email = payload.sub;
 
@@ -35,7 +35,7 @@ export default function OwnerFlightsPage() {
 
         const ownerId = userRes.data.userId;
 
-        // Fetch flights by ownerId
+      
         // const flightRes = await axios.get(
         //   `http://localhost:8080/api/flights/getByOwner/${ownerId}`,
         //   { headers: { Authorization: `Bearer ${token}` } }
@@ -54,7 +54,7 @@ export default function OwnerFlightsPage() {
     fetchFlights();
   }, []);
 
-  // Delete Flight
+ 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this flight?")) return;
 

@@ -25,7 +25,7 @@ export default function UpdateFlightPage() {
     try {
       const token = localStorage.getItem("jwtToken");
 
-      // ✅ Ensure routeId & ownerId are included
+    
       const updatedFlight = {
         ...flight,
         routeId: flight.route?.routeId || flight.routeId,
@@ -137,7 +137,7 @@ export default function UpdateFlightPage() {
           </div>
         </div>
 
-        {/* ✅ Hidden fields for backend */}
+      
         <input type="hidden" name="routeId" value={flight.route?.routeId || flight.routeId || ""} />
         <input type="hidden" name="ownerId" value={flight.owner?.userId || flight.ownerId || ""} />
 

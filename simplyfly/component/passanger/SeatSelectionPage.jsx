@@ -13,7 +13,7 @@ export default function SeatSelectionPage() {
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [msg, setMsg] = useState("");
 
-    // Config
+   
     const BUSINESS_ROWS = 4;
     const BUSINESS_FARE = 5000;
     const ECONOMY_FARE = 2000;
@@ -35,7 +35,7 @@ export default function SeatSelectionPage() {
             const fare = seatClass === "Business" ? BUSINESS_FARE : ECONOMY_FARE;
 
             seatsArr.push({
-                seat_id: null, // not yet in DB
+                seat_id: null, 
                 seat_number: `${row}${letter}`,
                 is_booked: false,
                 seat_class: seatClass,
@@ -53,13 +53,13 @@ export default function SeatSelectionPage() {
             return;
         }
 
-        // toggle local selection
+       
         if (selectedSeats.includes(seat.seat_number)) {
             setSelectedSeats(selectedSeats.filter(s => s !== seat.seat_number));
         } else {
             setSelectedSeats([...selectedSeats, seat.seat_number]);
 
-            // Save to backend only when first selected
+          
             if (!seat.seat_id) {
                 const token = localStorage.getItem("jwtToken");
                 try {
@@ -79,7 +79,7 @@ export default function SeatSelectionPage() {
 
                      const res = await SeatService.addSeat(seatDto, token);
 
-                    // update local state with generated seat_id
+                    
                     setSeats(prev =>
                         prev.map(s =>
                             s.seat_number === seat.seat_number
@@ -120,7 +120,7 @@ export default function SeatSelectionPage() {
         return seat.seat_class === "Business" ? "btn btn-warning" : "btn btn-outline-success";
     };
 
-    // Group seats by row
+    
     const rows = {};
     seats.forEach(seat => {
         if (seat?.seat_number) {
@@ -154,7 +154,7 @@ export default function SeatSelectionPage() {
 
             {msg && <div className="alert alert-warning">{msg}</div>}
 
-            {/* Seat Stats */}
+            
             <div className="d-flex justify-content-center gap-4 mb-4 flex-wrap">
                 <div className="bg-dark p-3 rounded text-center">
                     <strong>Total Seats</strong>
@@ -170,7 +170,7 @@ export default function SeatSelectionPage() {
                 </div>
             </div>
 
-            {/* Selected Seats */}
+            
             {selectedSeats.length > 0 && (
                 <div className="mb-4">
                     <h5>🪑 Selected Seats:</h5>
@@ -191,7 +191,7 @@ export default function SeatSelectionPage() {
                 </div>
             )}
 
-            {/* Seats Layout */}
+            
             <div className="bg-grey p-4 rounded">
                 {rowNumbers.map(rowNumber => (
                     <div key={rowNumber} className="d-flex justify-content-center mb-2 align-items-center">
@@ -216,7 +216,7 @@ export default function SeatSelectionPage() {
                 ))}
             </div>
 
-            {/* Proceed Button */}
+           
             <div className="mt-4 text-center">
                 <button
                     className="btn btn-success btn-lg"

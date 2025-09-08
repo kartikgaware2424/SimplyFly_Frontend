@@ -16,14 +16,14 @@ const parseJwt = (token) => {
 };
 
 const toSeconds = (val) => {
-  // datetime-local gives 
+  
   if (!val) return "";
   return val.length === 16 ? `${val}:00` : val;
 };
 
 export default function AddFlight() {
   const navigate = useNavigate();
-  const { routeId } = useParams(); // /add-flight/:routeId
+  const { routeId } = useParams(); 
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
@@ -37,11 +37,11 @@ export default function AddFlight() {
     departureDate: "",
     departureTime: "",
     arrivalTime: "",
-    routeId: routeId || "",   // from URL
-    ownerId: "",              // from token
+    routeId: routeId || "",   
+    ownerId: "",              
   });
 
-  // Fetch ownerId userId via token -> email -> API
+  // Fetch ownerId userId from token - email -and  API
   useEffect(() => {
     const fetchOwnerId = async () => {
       try {
@@ -69,7 +69,7 @@ export default function AddFlight() {
     setSuccess(false);
   };
 
-  // Client-side validations mirroring FlightDto
+
   const validateForm = () => {
     if (!flight.flightName?.trim() || flight.flightName.length > 100)
       return "Flight name is required (max 100 chars).";
@@ -106,7 +106,7 @@ export default function AddFlight() {
     const validationError = validateForm();
     if (validationError) return setError(validationError);
 
-    // Ensure date fields match backend pattern
+   
     const departureTime = toSeconds(flight.departureTime);
     const arrivalTime = toSeconds(flight.arrivalTime);
     const departureDate =
@@ -119,9 +119,9 @@ export default function AddFlight() {
       fare: Number(flight.fare),
       baggageCheckIn: flight.baggageCheckIn.trim(),
       baggageCabin: flight.baggageCabin.trim(),
-      departureDate,                 // LocalDate (yyyy-MM-dd)
-      departureTime,                 // LocalDateTime (yyyy-MM-dd'T'HH:mm:ss)
-      arrivalTime,                   // LocalDateTime (yyyy-MM-dd'T'HH:mm:ss)
+      departureDate,                 
+      departureTime,                
+      arrivalTime,                  
       routeId: Number(flight.routeId),
       ownerId: Number(flight.ownerId),
     };
@@ -134,7 +134,7 @@ export default function AddFlight() {
       setSuccess(true);
       setError("");
 
-      // Reset (keep routeId & ownerId)
+     
       setFlight((prev) => ({
         ...prev,
         flightName: "",
@@ -151,7 +151,7 @@ export default function AddFlight() {
       setTimeout(() => navigate("/manage-flight"), 1500);
     } catch (err) {
       console.error(err);
-      // Try to show backend validation messages if any
+     
       const backendMsg =
         err?.response?.data?.message ||
         err?.response?.data?.error ||
@@ -298,7 +298,7 @@ export default function AddFlight() {
                         name="departureDate"
                         value={flight.departureDate}
                         onChange={handleChange}
-                        // optional because we derive from departureTime if empty
+                        
                       />
                     </div>
 
@@ -330,7 +330,7 @@ export default function AddFlight() {
                       />
                     </div>
 
-                    {/* Route ID from URL (read-only) */}
+                    
                     <div className="col-md-6">
                       <label className="form-label">
                         <i className="bi bi-signpost-2-fill me-1"></i> Route ID
@@ -346,7 +346,7 @@ export default function AddFlight() {
                       />
                     </div>
 
-                    {/* Owner ID from token (read-only) */}
+                    
                     <div className="col-md-6">
                       <label className="form-label">
                         <i className="bi bi-person-fill me-1"></i> Owner ID

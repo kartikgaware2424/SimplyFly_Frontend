@@ -35,7 +35,7 @@ export default function PassengerPage() {
     color: "white",
   }}
 >
-  {/* Navbar */}
+ 
   <nav
     className="d-flex justify-content-between align-items-center p-3"
     style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
@@ -57,13 +57,13 @@ export default function PassengerPage() {
     </div>
   </nav>
 
-  {/* Header */}
+  
   <div className="p-4 text-center" style={{ backgroundColor: "rgba(0,0,0,0.4)" }}>
     <h1 className="display-4 fw-bold">Welcome, Passenger!</h1>
     <p className="lead">Plan your journey, book flights, and manage bookings</p>
   </div>
 
-  {/* Dashboard */}
+ 
   <div className="container mt-5 mb-5">
     <h4 className="mb-4 text-center text-white">Passenger Dashboard</h4>
 
@@ -98,12 +98,12 @@ export default function PassengerPage() {
     </div>
   </div>
 
-  {/* Footer */}
+  
   <footer
     className="text-center py-4 mt-auto"
     style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
   >
-    <p className="mb-0 text-white-50">©2025 SimpliFly. Fly with confidence.</p>
+    <p className="mb-0 text-white-50">@2025 SimpliFly. Fly with confidence.</p>
   </footer>
 </div>
     

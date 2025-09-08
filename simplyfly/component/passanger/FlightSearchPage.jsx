@@ -25,7 +25,7 @@ const FlightSearchPage = () => {
   const isFutureOrToday = (departureTime) => {
     const now = new Date();
     const dep = new Date(departureTime);
-    return dep >= now; // true if departure is present or future
+    return dep >= now; 
   };
 
   return (

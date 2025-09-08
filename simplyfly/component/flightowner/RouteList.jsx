@@ -21,7 +21,7 @@ export default function RouteList() {
         // const res = await axios.get("http://localhost:8080/api/routes/getAllRoutes", {
         //   headers: { Authorization: `Bearer ${token}` },
         // });
-         const res= await RouteService.getAllRoutes(token);
+        const res= await RouteService.getAllRoutes(token);
         setRoutes(res.data);
       } catch (err) {
         console.error(err);

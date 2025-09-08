@@ -52,8 +52,9 @@ export default function Refund() {
   const handleRefundAction = async (refundId, action) => {
     try {
       const token = localStorage.getItem("jwtToken");
+      // If the action is approve then insert into approve else in reject 
       const url =
-        action === "approve"
+         action === "approve"
           ? `http://localhost:8080/api/refunds/approve/${refundId}`
           : `http://localhost:8080/api/refunds/reject/${refundId}`;
 
@@ -63,8 +64,7 @@ export default function Refund() {
 
       // Update status locally
       setRefunds((prev) =>
-        prev.map((r) =>
-          r.refundId === refundId
+        prev.map((r) =>r.refundId === refundId
             ? { ...r, status: action === "approve" ? "COMPLETED" : "REJECTED" }
             : r
         )

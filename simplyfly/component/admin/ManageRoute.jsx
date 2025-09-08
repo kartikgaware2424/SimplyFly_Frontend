@@ -17,7 +17,7 @@ export default function ManageRoute() {
 
   const navigate = useNavigate();
 
-  // ✅ Fetch all routes
+  
   const fetchRoutes = async () => {
     try {
       setLoading(true);
@@ -36,7 +36,7 @@ export default function ManageRoute() {
     fetchRoutes();
   }, []);
 
-  // ✅ Delete Route
+  
   const deleteRoute = async (id) => {
     if (!window.confirm("Are you sure you want to delete this route?")) return;
     try {
@@ -50,7 +50,7 @@ export default function ManageRoute() {
     }
   };
 
-  // ✅ Open Update Modal
+
   const openUpdateModal = (route) => {
     setSelectedRoute(route);
     setUpdatedRoute({
@@ -61,7 +61,7 @@ export default function ManageRoute() {
     });
   };
 
-  // ✅ Update Route
+  
   const handleUpdate = async () => {
     try {
       const token = localStorage.getItem("jwtToken");
@@ -137,7 +137,7 @@ export default function ManageRoute() {
         )}
       </div>
 
-      {/* ✅ Update Route Modal */}
+      
       {selectedRoute && (
         <div
           className="modal fade show"

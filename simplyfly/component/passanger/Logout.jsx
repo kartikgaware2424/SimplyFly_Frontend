@@ -5,13 +5,13 @@ export default function Logout() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear token
+   
     localStorage.removeItem("jwtToken");
 
-    // Optional: clear other data
+   
     localStorage.clear();
 
-    // Redirect after a short delay
+    
     setTimeout(() => {
       navigate("/");
     }, 1000);
